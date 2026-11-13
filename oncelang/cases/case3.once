@@ -1,0 +1,12 @@
+//堆和数组，数据持久化和跨域操作数据的重要方法
+// 申请 8 字节的堆
+a, guard = (createheap)(1, 8);
+
+// 写入越界数据，自动扩容
+a, worker = a;
+worker[20] = 999;
+
+// 读取并输出
+a, reader = a;
+res = reader[20];
+print (int)res;

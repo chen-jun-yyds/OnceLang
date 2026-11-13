@@ -1,0 +1,8 @@
+//自定义解释器函数
+interp double_it(a) = {
+    a, b = a; // 续命
+    return a + b;
+}
+a = 1;
+b = (double_it)(a);
+print (int)b;

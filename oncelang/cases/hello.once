@@ -1,0 +1,9 @@
+//way1
+x = "Hello World";
+print (string)x;
+
+//way2
+print "Hello World";
+
+//way3
+Hello World

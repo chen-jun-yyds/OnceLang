@@ -1,0 +1,53 @@
+// 0-1 背包：物品1(w=1,v=15), 物品2(w=3,v=20), 物品3(w=4,v=30), 容量=4
+// 申请 20 字节（5 个 int 状态），dp 用来读写，guard 用来守家防堆炸
+dp, guard = (createheap)(1, 20);
+
+// ============ 处理物品 1 (w=1, v=15) ============
+dp, r1 = dp; v1 = r1[16];           
+dp, r2 = dp; v2 = r2[12];           
+nv = v2 + 15;                        
+nc, ns = nv;                         
+if (nc > v1) { dp, w1 = dp; w1[16] = ns; } 
+
+dp, r1 = dp; v1 = r1[12];
+dp, r2 = dp; v2 = r2[8];
+nv = v2 + 15;
+nc, ns = nv;
+if (nc > v1) { dp, w1 = dp; w1[12] = ns; }
+
+dp, r1 = dp; v1 = r1[8];
+dp, r2 = dp; v2 = r2[4];
+nv = v2 + 15;
+nc, ns = nv;
+if (nc > v1) { dp, w1 = dp; w1[8] = ns; }
+
+dp, r1 = dp; v1 = r1[4];
+dp, r2 = dp; v2 = r2[0];
+nv = v2 + 15;
+nc, ns = nv;
+if (nc > v1) { dp, w1 = dp; w1[4] = ns; }
+
+// ============ 处理物品 2 (w=3, v=20) ============
+dp, r1 = dp; v1 = r1[16];
+dp, r2 = dp; v2 = r2[4];
+nv = v2 + 20;
+nc, ns = nv;
+if (nc > v1) { dp, w1 = dp; w1[16] = ns; }
+
+dp, r1 = dp; v1 = r1[12];
+dp, r2 = dp; v2 = r2[0];
+nv = v2 + 20;
+nc, ns = nv;
+if (nc > v1) { dp, w1 = dp; w1[12] = ns; }
+
+// ============ 处理物品 3 (w=4, v=30) ============
+dp, r1 = dp; v1 = r1[16];
+dp, r2 = dp; v2 = r2[0];
+nv = v2 + 30;
+nc, ns = nv;
+if (nc > v1) { dp, w1 = dp; w1[16] = ns; }
+
+// ============ 输出最终最优解 dp[4] ============
+dp, final_r = dp;
+ans = final_r[16];
+print (int)ans;

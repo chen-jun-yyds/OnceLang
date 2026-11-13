@@ -1,0 +1,10 @@
+//oncelang语言的精髓，分叉语法
+a = 5;
+a, b = a;     // a 和 b 同时持有 5 的二进制，各有一次读写机会
+print (int)a;
+print (int)b;
+a = 5;
+b = 3;
+c, d = a, b+1;     // 把 a 的值写入 c ，把 b+1 的值写入 d 
+print (int)c;
+print (int)d;
